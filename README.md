@@ -1,31 +1,29 @@
 # Steal a Superpower — Codes Finder
 
-An independent, mobile-friendly game code finder with **search**, **Active / Expired filtering**, **one-click copy**, and a **Wiki link**. Built with plain HTML, CSS and JavaScript. No backend, dependencies, or paid hosting needed.
+A community-made, mobile-friendly tool to search, filter and copy game codes.
 
-> **IMPORTANT:** All `DEMO-*` codes in this template are **fictional examples**, not real redeemable codes. **Replace them before sharing the site.** The game name is a working assumption based on the Wiki domain; change it if necessary.
-
-## Live tool
-
-Once GitHub Pages is enabled, add your real link here:
-
-**[Open Codes Finder](https://YOUR-USERNAME.github.io/steal-a-superpower-codes/)**
+**[Open the Codes Finder](https://goodaswater365.github.io/steal-a-superpower-codes/)**
 
 ## Game Wiki
 
-Add the **current, functioning Wiki URL** here: `https://YOUR-WIKI-DOMAIN.example/`
+- **[Steal a Superpower Wiki — Home](https://stealasuperpowerwiki.com/)**
+- **[Codes guide — Latest codes and redeeming help](https://stealasuperpowerwiki.com/codes)**
 
-## Customize
+## Features
 
-1. Edit `codes.json` with **verified** game codes. Use `"status": "active"` or `"status": "expired"`. You can replace the sample list with `[]` until you have verified codes.
-2. Edit `config.json`:
-   - `gameName`: your game's title.
-   - `wikiUrl`: your **live Wiki URL**, e.g. `https://your-real-domain.com/`. Empty string hides the Wiki links.
-   - `updatedAt`: the date you verified the list, in `YYYY-MM-DD` format.
-   - `demoMode`: set to `false` **only after** removing all demo codes.
-3. Edit the README links above, replacing `YOUR-USERNAME` and the placeholder Wiki domain.
-4. Commit the changes. GitHub Pages republishes from your source branch.
+- Search codes and rewards
+- Filter by Active or Expired
+- Copy active codes with one click
+- Mobile-friendly design
+- Quick link to the Wiki's codes guide
 
-Example real-data structure (the values below are **illustrative only**):
+> **Demo content:** The codes presently shown in this repository are fictional `DEMO-*` examples, not redeemable game codes. Replace these with verified codes before sharing as a real code directory.
+
+## Update game codes
+
+Edit `codes.json` to add verified codes. Use `"status": "active"` or `"status": "expired"`. If no codes have been verified, use `[]`.
+
+Example structure (illustrative, **not a real code**):
 
 ```json
 [
@@ -33,34 +31,22 @@ Example real-data structure (the values below are **illustrative only**):
 ]
 ```
 
-## Publish to GitHub Pages
+Edit `config.json` to change the game title, Wiki codes guide URL, last verification date and demo flag. Set `demoMode` to `false` only after removing every demo code.
 
-1. Create a **public** GitHub repository named `steal-a-superpower-codes`.
-2. Upload **the contents of this folder** (not the enclosing folder) to the repository's root so `index.html` is in the root.
-3. Open **Settings → Pages → Build and deployment → Source: Deploy from a branch**.
-4. Select **Branch: `main`**, **Folder: `/ (root)`**, then **Save**.
-5. Once published, open `https://YOUR-USERNAME.github.io/steal-a-superpower-codes/`.
+## GitHub Pages deployment
 
-Official guide: https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site
+This project is hosted at [GitHub Pages](https://goodaswater365.github.io/steal-a-superpower-codes/). The repository is published from the `main` branch, `/ (root)` directory.
 
-## Local preview
-
-Because browsers typically restrict `fetch()` on `file://` URLs, run a local server in this directory:
-
-```bash
-python3 -m http.server 8000
-```
-
-Visit http://localhost:8000 .
+To deploy a copy: select **Settings → Pages → Deploy from a branch → main → / (root)**.
 
 ## Files
 
-- `index.html`: page structure
-- `style.css`: styling and mobile layout
-- `app.js`: search, status filter, copy, rendering, and config loading
-- `codes.json`: editable code list
-- `config.json`: game title, Wiki link, update date, and demo flag
+- `index.html` — page markup
+- `style.css` — visual design and responsive layout
+- `app.js` — search, filtering, copy and data loading
+- `codes.json` — code list
+- `config.json` — title, Wiki link, date and demo flag
 
 ## Disclaimer
 
-Community-made and not affiliated with the game developers. Codes may expire without notice. Never ask players for account credentials.
+This is an independent community project and is not affiliated with the game's developers. Codes can expire without notice. Never share account credentials.
