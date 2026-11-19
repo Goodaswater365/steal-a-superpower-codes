@@ -1,7 +1,6 @@
 'use strict';
 const $ = (id) => document.getElementById(id);
 const state = { codes: [], status: 'all', query: '', demo: false };
-const safeDate = (s) => /^\d{4}-\d{2}-\d{2}$/.test(s || '') ? s : '';
 function showToast(message) {
   const node = $('toast'); node.textContent = message; node.classList.add('show');
   clearTimeout(showToast.timer); showToast.timer = setTimeout(() => node.classList.remove('show'), 2000);
@@ -25,7 +24,8 @@ function render() {
     const reward = document.createElement('div'); reward.className = 'code-reward'; reward.textContent = item.reward || 'Reward not specified';
     main.append(name, reward);
     const right = document.createElement('div'); right.className = 'card-right';
-    const status = document.createElement('span'); status.className = `status ${item.status}`; status.textContent = item.status === 'active' ? '● Active' : 'Expired';
+    const status = document.createElement('span'); status.className = `status ${item.status}`;
+    status.textContent = item.status === 'active' ? '● Listed Active' : item.status === 'reported' ? 'Unverified' : 'Expired';
     const copy = document.createElement('button'); copy.className = 'copy'; copy.type = 'button'; copy.textContent = 'Copy';
     copy.disabled = item.status === 'expired'; copy.setAttribute('aria-label', `Copy ${item.code}`);
     copy.addEventListener('click', async () => {
@@ -47,14 +47,13 @@ async function start() {
     if (!configResponse.ok || !codesResponse.ok) throw new Error('Failed to load data');
     const config = await configResponse.json(); const codes = await codesResponse.json();
     document.title = `${config.gameName || 'Game'} — Codes Finder`;
-    state.demo = config.demoMode === true;
-    $('demoWarning').hidden = !state.demo;
-    if (safeDate(config.updatedAt)) $('updatedAt').textContent = `Updated: ${config.updatedAt}`;
+    $('demoWarning').hidden = true;
+    if (/^\d{4}-\d{2}-\d{2}$/.test(config.updatedAt || '')) $('updatedAt').textContent = `Data reviewed: ${config.updatedAt}`;
     if (typeof config.wikiUrl === 'string' && /^https:\/\/[^\s]+$/.test(config.wikiUrl)) {
       for (const id of ['wikiTop', 'wikiBottom']) { const link = $(id); link.href = config.wikiUrl; link.hidden = false; }
     }
     if (!Array.isArray(codes)) throw new Error('codes.json must be an array');
-    state.codes = codes.filter((item) => item && typeof item.code === 'string' && item.code.trim() && ['active','expired'].includes(item.status))
+    state.codes = codes.filter((item) => item && typeof item.code === 'string' && item.code.trim() && ['active','expired','reported'].includes(item.status))
       .map((item) => ({code: item.code.trim(),reward: String(item.reward || ''),status:item.status}));
     render();
   } catch (error) {
