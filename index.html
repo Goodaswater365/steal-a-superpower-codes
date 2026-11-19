@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Find, filter, and copy game codes. Check code rewards and status." />
+  <meta name="theme-color" content="#0c1020" />
+  <title>Steal a Superpower — Codes Finder</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <div class="glow glow-a"></div><div class="glow glow-b"></div>
+  <div class="shell">
+    <header class="topbar">
+      <a href="./" class="brand"><span class="brand-icon">S</span><span>SUPERPOWER <strong>CODES</strong></span></a>
+      <a id="wikiTop" class="toplink" href="#" hidden target="_blank" rel="noopener noreferrer">Game Wiki ↗</a>
+    </header>
+    <main>
+      <section class="hero" aria-labelledby="page-title">
+        <span class="eyebrow"><span class="pulse"></span> CODE DIRECTORY</span>
+        <h1 id="page-title">Find your next <em>power-up.</em></h1>
+        <p>Search, check status, and copy game codes in one place.</p>
+        <div class="warning" id="demoWarning" hidden>⚠ Demo codes only — these are examples, not redeemable game codes. Replace them before publishing.</div>
+      </section>
+      <section class="tool" aria-label="Code search tool">
+        <div class="toolbar">
+          <label class="searchbox"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Search code or reward..." autocomplete="off" aria-label="Search code or reward"></label>
+          <div class="filters" role="group" aria-label="Filter by status">
+            <button type="button" class="filter active" data-status="all" aria-pressed="true">All</button>
+            <button type="button" class="filter" data-status="active" aria-pressed="false">Active</button>
+            <button type="button" class="filter" data-status="expired" aria-pressed="false">Expired</button>
+          </div>
+        </div>
+        <div class="stats"><span id="totalCount">Loading codes...</span><span id="updatedAt"></span></div>
+        <div id="codeList" class="code-list" aria-live="polite"></div>
+      </section>
+      <section class="info">
+        <h2>How to redeem</h2>
+        <p>Open the game, find its codes or rewards menu, enter a valid code, and confirm. The exact steps may vary by game version.</p>
+        <p class="disclaimer">Code availability may change without notice. This is an independent fan-made utility, not an official game service.</p>
+      </section>
+    </main>
+    <footer><span>Community-made codes finder</span><a id="wikiBottom" href="#" hidden target="_blank" rel="noopener noreferrer">More guides at the Wiki ↗</a></footer>
+  </div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
