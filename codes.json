@@ -1,5 +1,52 @@
 [
-  { "code": "DEMO-WELCOME", "reward": "Example: Coins", "status": "active" },
-  { "code": "DEMO-POWER", "reward": "Example: Boost", "status": "active" },
-  { "code": "DEMO-OLD", "reward": "Example: Gems", "status": "expired" }
+  {
+    "code": "50KLIKES",
+    "reward": "Tier 3 potions: 3× Luck, Power, Damage and Health",
+    "status": "active"
+  },
+  {
+    "code": "30KLIKES",
+    "reward": "Luck Potion III: 3× Luck for 15 minutes",
+    "status": "active"
+  },
+  {
+    "code": "20KLIKES",
+    "reward": "3× Luck for 15 minutes",
+    "status": "active"
+  },
+  {
+    "code": "POTIONS",
+    "reward": "Luck Potion II effect",
+    "status": "active"
+  },
+  {
+    "code": "GROUP",
+    "reward": "Champion Pack (officially announced; redemption unverified)",
+    "status": "reported"
+  },
+  {
+    "code": "10KCCU",
+    "reward": "Mystery Pack (reported; redemption uncertain)",
+    "status": "reported"
+  },
+  {
+    "code": "SOZFORUPDATES",
+    "reward": "Power Potion III (third-party reported)",
+    "status": "active"
+  },
+  {
+    "code": "10KLIKES",
+    "reward": "Power Potion III (third-party reported)",
+    "status": "active"
+  },
+  {
+    "code": "1KCCU",
+    "reward": "Power Potion II (third-party reported)",
+    "status": "active"
+  },
+  {
+    "code": "DISCORD",
+    "reward": "Legend Pack (third-party reported)",
+    "status": "active"
+  }
 ]
